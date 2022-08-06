@@ -15,7 +15,7 @@ class MainFoofPage extends StatefulWidget {
 class _MainFoofPageState extends State<MainFoofPage> {
   @override
   Widget build(BuildContext context) {
-    print("Current Screen Size "+MediaQuery.of(context).size.height.toString());
+    //print("Current Screen Size "+MediaQuery.of(context).size.height.toString());
     return Scaffold(
         body: Column(
       children: [
@@ -36,7 +36,7 @@ class _MainFoofPageState extends State<MainFoofPage> {
                     Row(
                       children: [
                         SmallText(text: "Addis Ababa",color: Colors.black54,),
-                        Icon(Icons.arrow_drop_down_rounded)
+                        const Icon(Icons.arrow_drop_down_rounded)
                       ],
                     )],
                 ),
@@ -56,7 +56,7 @@ class _MainFoofPageState extends State<MainFoofPage> {
           ),
         ),
       // Showing the Body
-        Expanded(
+        const Expanded(
             child: SingleChildScrollView(
                 child: FoodPageBody(),
             ),

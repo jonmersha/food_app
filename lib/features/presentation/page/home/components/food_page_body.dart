@@ -229,7 +229,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   right: Dimensions.padding10,
                   top: Dimensions.padding10 / 2),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radiuse20),
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: index.isEven ? Color(0XFF69c5df) : Color(0XFF69c500),
                   image: DecorationImage(
                       fit: BoxFit.cover,
@@ -247,7 +247,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   right: Dimensions.margin30,
                   bottom: Dimensions.margin30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radiuse20),
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
                   boxShadow: const [
                     BoxShadow(
