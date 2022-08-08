@@ -1,7 +1,8 @@
 import 'package:caffe_sheger/controllers/popular_product_controller.dart';
 import 'package:caffe_sheger/controllers/recomended_product_controller.dart';
-import 'package:caffe_sheger/features/presentation/page/home/components/recomended_food_detail.dart';
+import 'package:caffe_sheger/features/presentation/page/food_details/recommended_food.dart';
 import 'package:caffe_sheger/features/presentation/page/home/main_food_page.dart';
+import 'package:caffe_sheger/route/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -27,11 +28,9 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: '',
       home: const MainFoodPage(),
+      initialRoute: RouteHelper.initial,
     );
   }
 }

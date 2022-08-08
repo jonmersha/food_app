@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/app_colors.dart';
 import '../../widget/BigText.dart';
-import 'components/food_page_body.dart';
+import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
