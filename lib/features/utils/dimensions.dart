@@ -10,9 +10,8 @@ class Dimensions{
   static double pageView = screenHeight/(screenHeight/320);
   static double margin30 = screenHeight/(screenHeight/30);
   static double padding10 = screenHeight/(screenHeight/10);
-  static double icon26 = screenHeight/(screenHeight/26);
 
-  static double pageViewContainer = screenHeight/(screenHeight/320);
+  static double pageViewContainer = screenHeight/(screenHeight/200);
   static double pageViewTextContainer = screenHeight/(screenHeight/220);
 
   static double height10 = screenHeight/(screenHeight/10);
@@ -20,6 +19,8 @@ class Dimensions{
   static double height20 = screenHeight/(screenHeight/20);
   static double height30 = screenHeight/(screenHeight/30);
   static double height120 = screenHeight/(screenHeight/120);
+  static double height100 = screenHeight/(screenHeight/100);
+  static double height200 = screenHeight/(screenHeight/250);
 
   static double width10 = screenWidth/(screenWidth/10);
   static double width15 = screenWidth/(screenWidth/15);
@@ -31,6 +32,7 @@ class Dimensions{
   static double width70 = screenWidth/(screenWidth/70);
 
 
+  static double fontSize26 = screenHeight/(screenHeight/26);
   static double fontSize20 = screenHeight/(screenHeight/20);
   static double fontSize12 = screenHeight/(screenHeight/12);
   static double fontSize11 = screenHeight/(screenHeight/11);
@@ -56,7 +58,11 @@ static double listViewTextView=screenWidth/3.25;
 static double popularFoodImageSize=screenHeight/2.41;
 
   static double height45=screenHeight/(screenHeight/45);
+  static double icon26 = screenHeight/(screenHeight/26);
+  static double iconSize24=screenHeight/(screenHeight/24);
   static double iconSize16=screenHeight/(screenHeight/16);
+
+
 
 
   static double textHeight=screenHeight/(screenHeight/130);

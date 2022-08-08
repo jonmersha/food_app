@@ -5,14 +5,14 @@ import '../../../utils/app_colors.dart';
 import '../../widget/BigText.dart';
 import 'components/food_page_body.dart';
 
-class MainFoofPage extends StatefulWidget {
-  const MainFoofPage({Key? key}) : super(key: key);
+class MainFoodPage extends StatefulWidget {
+  const MainFoodPage({Key? key}) : super(key: key);
 
   @override
-  State<MainFoofPage> createState() => _MainFoofPageState();
+  State<MainFoodPage> createState() => _MainFoodPageState();
 }
 
-class _MainFoofPageState extends State<MainFoofPage> {
+class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
     //print("Current Screen Size "+MediaQuery.of(context).size.height.toString());

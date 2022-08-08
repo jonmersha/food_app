@@ -24,7 +24,7 @@ class BigText extends StatelessWidget {
           fontFamily: 'Roboto',
           color: color,
           fontSize: size,
-        fontWeight: FontWeight.w400
+          fontWeight: FontWeight.w400
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:caffe_sheger/features/utils/app_colors.dart';
 import 'package:caffe_sheger/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +6,14 @@ class AppIcon extends StatelessWidget {
   final Color backGroundColor;
   final Color iconColor;
   final double size;
+  final double iconSize;
 
   const AppIcon(
       {Key? key,
+        this.iconSize=16,
        this.iconData=Icons.search,
-       this.backGroundColor=Colors.blueAccent,
-       this.iconColor=Colors.white30,
+       this.backGroundColor=Colors.white,
+       this.iconColor=Colors.black54,
        this.size=45})
       : super(key: key);
 
@@ -27,7 +28,8 @@ class AppIcon extends StatelessWidget {
       ),
     child: Icon(
       iconData,
-      color: this.iconColor,size: Dimensions.iconSize16,),
+      color: this.iconColor,
+      size: iconSize,),
     );
   }
 }

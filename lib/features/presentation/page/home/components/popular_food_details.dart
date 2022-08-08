@@ -1,3 +1,4 @@
+import 'package:caffe_sheger/features/presentation/page/home/main_food_page.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
 import 'package:caffe_sheger/features/presentation/widget/SmalText.dart';
 import 'package:caffe_sheger/features/presentation/widget/app_colum.dart';
@@ -6,6 +7,8 @@ import 'package:caffe_sheger/features/presentation/widget/expandable_text.dart';
 import 'package:caffe_sheger/features/utils/app_colors.dart';
 import 'package:caffe_sheger/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -38,10 +41,15 @@ class PopularFoodDetail extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(
-                    iconData: Icons.arrow_back_ios,
-                    iconColor: Colors.white30,
-                    backGroundColor: AppColors.mainBackColor,
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=>MainFoodPage());
+                    },
+                    child: AppIcon(
+                      iconData: Icons.arrow_back_ios,
+                      iconColor: Colors.white30,
+                      backGroundColor: AppColors.mainBackColor,
+                    ),
                   ),
                   AppIcon(
                       iconData: Icons.shopping_cart_outlined,
