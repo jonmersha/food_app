@@ -1,7 +1,8 @@
 import 'package:caffe_sheger/controllers/popular_product_controller.dart';
-import 'package:caffe_sheger/features/presentation/page/food_details/recommended_food.dart';
+import 'package:caffe_sheger/controllers/recomended_product_controller.dart';
+import 'package:caffe_sheger/features/presentation/page/food_details/RecommendedFoodDetail.dart';
 import 'package:caffe_sheger/features/presentation/page/home/components/small_card.dart';
-import 'package:caffe_sheger/features/presentation/page/food_details/popular_food.dart';
+import 'package:caffe_sheger/features/presentation/page/food_details/PopularFoodDetail.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
 import 'package:caffe_sheger/features/presentation/widget/SmalText.dart';
 import 'package:caffe_sheger/features/presentation/widget/text_with_icon.dart';
@@ -13,14 +14,13 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TopSlide extends StatefulWidget {
-  const TopSlide({Key? key}) : super(key: key);
-
+class RecommendedFoodSlider extends StatefulWidget {
+  const RecommendedFoodSlider({Key? key}) : super(key: key);
   @override
-  State<TopSlide> createState() => _TopSlideState();
+  State<RecommendedFoodSlider> createState() => _RecommendedFoodSliderState();
 }
 
-class _TopSlideState extends State<TopSlide> {
+class _RecommendedFoodSliderState extends State<RecommendedFoodSlider> {
 
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
@@ -48,23 +48,22 @@ class _TopSlideState extends State<TopSlide> {
   Widget build(BuildContext context) {
     return        Column(
       children: [
-        GetBuilder<PopularProductController>(builder: (popularProducts){
-          return popularProducts.isLoaded?Container(
+        GetBuilder<RecommendedProductController>(builder: (recommendedProduct){
+          return recommendedProduct.isLoaded?Container(
             height: Dimensions.pageView,
             child: PageView.builder(
                 controller: pageController,
-                itemCount: popularProducts.popularProductList.length,
+                itemCount: recommendedProduct.recommendedProductList.length,
                 itemBuilder: (context, position) {
-
-                  return _buildPageItem(position,popularProducts.popularProductList[position]);
+                  return _buildPageItem(position, recommendedProduct.recommendedProductList[position],recommendedProduct);
                 }),
           ):CircularProgressIndicator(
             color: AppColors.mainColor,
           );
         }),
-        GetBuilder<PopularProductController>(builder: (popularProducts){
+        GetBuilder<RecommendedProductController>(builder: (recommendedProduct){
           return DotsIndicator(
-            dotsCount: popularProducts.popularProductList.isEmpty?1:popularProducts.popularProductList.length,
+            dotsCount: recommendedProduct.recommendedProductList.isEmpty?1:recommendedProduct.recommendedProductList.length,
             position: _currPageValue,
             decorator: DotsDecorator(
               size: const Size.square(9.0),
@@ -78,7 +77,7 @@ class _TopSlideState extends State<TopSlide> {
     );
   }
 
-  Widget _buildPageItem(int index, ProductModel popularProductList) {
+  Widget _buildPageItem(int index, ProductModel productModel,RecommendedProductController recommendedProductController) {
     //Scalling while sliding
     Matrix4 matrix4 = new Matrix4.identity();
     if (index == _currPageValue.floor()) {
@@ -110,7 +109,7 @@ class _TopSlideState extends State<TopSlide> {
         children: [
           GestureDetector(
             onTap: (){
-              Get.to(()=>RecommendedFoodDetail(productModel: popularProductList),
+              Get.to(()=>RecommendedFoodDetail(productModel: productModel,recommendedProductController: recommendedProductController),
                   transition: Transition.leftToRightWithFade,duration: Duration(milliseconds: 800));
             },
             child: Align(
@@ -131,12 +130,12 @@ class _TopSlideState extends State<TopSlide> {
                     color: index.isEven ? Color(0XFF69c5df) : Color(0XFF69c500),
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(AppConstants.IMAGE_URL+popularProductList.img!))),
+                        image: NetworkImage(AppConstants.IMAGE_URL+productModel.img!))),
               ),
             ),
           ),
          // SmallCard(productmodel: popularProductList)
-          SmallCard(productList: popularProductList)
+          SmallCard(productList: recommendedProductController.recommendedProductList[index])
         ],
       ),
     );

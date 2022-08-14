@@ -11,19 +11,32 @@ class PopularProductController extends GetxController{
 
   bool _isLoaded=false;
   bool get isLoaded=>_isLoaded;
+
+  int _quantity=0;
+  int get quantity=>_quantity;
+
+
   Future<void> getPopularProductList() async{
     Response response = await popularProductRepo.getPopularProductList();
     if(response.statusCode==200){
       //print("got Products====================================");
       _popularProductList=[];
       _popularProductList.addAll(Product.fromJson(response.body).products);
+      update();
       _isLoaded=true;
-      //print(_popularProductList);
-      //update();
     }else{
 
     }
 
+
+  }
+  void setQuantity(bool isIncrement){
+    if(isIncrement){
+      _quantity++;
+    }
+    else{
+      _quantity--;
+    }
 
   }
 

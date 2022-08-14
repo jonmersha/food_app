@@ -18,8 +18,8 @@ class RecommendedProductController extends GetxController{
       _recommendedProductList=[];
       _recommendedProductList.addAll(Product.fromJson(response.body).products);
       _isLoaded=true;
-      print(_recommendedProductList);
-      //update();
+     // print(_recommendedProductList);
+      update();
     }else{
       print(response.statusText);
 

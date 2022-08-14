@@ -1,3 +1,5 @@
+import 'package:caffe_sheger/controllers/recomended_product_controller.dart';
+import 'package:caffe_sheger/features/presentation/page/home/components/PopularFoodList.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
 import 'package:caffe_sheger/features/presentation/widget/app_icon.dart';
 import 'package:caffe_sheger/features/presentation/widget/expandable_text.dart';
@@ -5,7 +7,6 @@ import 'package:caffe_sheger/features/utils/app_colors.dart';
 import 'package:caffe_sheger/features/utils/app_constants.dart';
 import 'package:caffe_sheger/features/utils/dimensions.dart';
 import 'package:caffe_sheger/model/product_model.dart';
-import 'package:caffe_sheger/route/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,8 @@ import '../home/main_food_page.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
   final ProductModel productModel;
-  const RecommendedFoodDetail({Key? key, required this.productModel}) : super(key: key);
+  final RecommendedProductController recommendedProductController;
+  RecommendedFoodDetail({Key? key, required this.productModel, required this.recommendedProductController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

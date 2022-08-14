@@ -1,4 +1,4 @@
-import 'package:caffe_sheger/features/presentation/page/food_details/popular_food.dart';
+import 'package:caffe_sheger/features/presentation/page/food_details/PopularFoodDetail.dart';
 import 'package:caffe_sheger/features/presentation/page/home/main_food_page.dart';
 import 'package:get/get.dart';
 

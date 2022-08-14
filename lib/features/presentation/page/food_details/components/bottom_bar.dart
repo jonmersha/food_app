@@ -1,10 +1,12 @@
+import 'package:caffe_sheger/controllers/popular_product_controller.dart';
+import 'package:caffe_sheger/controllers/recomended_product_controller.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
 import 'package:caffe_sheger/features/utils/app_colors.dart';
 import 'package:caffe_sheger/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget {
-  const BottomBar({
+  const BottomBar( {
     Key? key,
   }) : super(key: key);
 
@@ -47,7 +49,7 @@ class BottomBar extends StatelessWidget {
                     width: Dimensions.width10 / 2,
                   ),
                   BigText(
-                    text: "0",
+                    text: "00",
                   ),
                   SizedBox(
                     width: Dimensions.width10 / 2,

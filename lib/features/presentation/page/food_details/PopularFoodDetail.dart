@@ -1,4 +1,5 @@
 import 'package:caffe_sheger/controllers/popular_product_controller.dart';
+import 'package:caffe_sheger/controllers/recomended_product_controller.dart';
 import 'package:caffe_sheger/features/presentation/page/food_details/components/bottom_bar.dart';
 import 'package:caffe_sheger/features/presentation/page/home/main_food_page.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
@@ -14,8 +15,8 @@ import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   final ProductModel productModel;
-
-  const PopularFoodDetail( {Key? key, required this.productModel}) : super(key: key);
+  final PopularProductController popularProductController;
+  PopularFoodDetail( {Key? key, required this.productModel, required this.popularProductController}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +103,71 @@ class PopularFoodDetail extends StatelessWidget {
 
         ],
       ),
-      bottomNavigationBar: const BottomBar(),
+      bottomNavigationBar: Container(
+          height: Dimensions.height120,
+          padding: EdgeInsets.only(
+              top: Dimensions.height30,
+              bottom: Dimensions.height30,
+              left: Dimensions.height20,
+              right: Dimensions.height20),
+          decoration: BoxDecoration(
+            color: AppColors.buttonBackGroundColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.radius20 * 2),
+                topRight: Radius.circular(Dimensions.radius20 * 2)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.height20,
+                    bottom: Dimensions.height20,
+                    left: Dimensions.height20,
+                    right: Dimensions.height20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.remove,
+                      color: AppColors.singleColor,
+                    ),
+                    SizedBox(
+                      width: Dimensions.width10 / 2,
+                    ),
+                    BigText(
+                      text: popularProductController.quantity.toString(),
+                    ),
+                    SizedBox(
+                      width: Dimensions.width10 / 2,
+                    ),
+                    const Icon(Icons.add),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.height20,
+                    bottom: Dimensions.height20,
+                    left: Dimensions.height20,
+                    right: Dimensions.height20),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.height20),
+                  color: AppColors.mainColor,
+                ),
+                child: BigText(
+                  text: "\$0.0 | Add to Cart",
+                  size: Dimensions.fontSize20,
+                  color: Colors.white,
+                ),
+              )
+            ],
+          )),
     );
   }
 }

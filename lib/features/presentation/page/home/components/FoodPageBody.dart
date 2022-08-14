@@ -1,6 +1,6 @@
 import 'package:caffe_sheger/controllers/popular_product_controller.dart';
-import 'package:caffe_sheger/features/presentation/page/home/components/recomended_list.dart';
-import 'package:caffe_sheger/features/presentation/page/home/components/top_slide.dart';
+import 'package:caffe_sheger/features/presentation/page/home/components/PopularFoodList.dart';
+import 'package:caffe_sheger/features/presentation/page/home/components/RecommendedFoodSlider.dart';
 import 'package:caffe_sheger/features/presentation/widget/BigText.dart';
 import 'package:caffe_sheger/features/presentation/widget/SmalText.dart';
 import 'package:caffe_sheger/features/utils/dimensions.dart';
@@ -26,7 +26,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        TopSlide(),
+        RecommendedFoodSlider(),
         //Dots Section
 
         //Popular Sectios
@@ -56,7 +56,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         //List of foods and immages
-        const RecommendedFoodList()
+        const PopularFoodList()
       ],
     );
   }
